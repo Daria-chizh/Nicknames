@@ -4,21 +4,22 @@ export default class Validator {
   }
 
   validateUsername() {
-    if (this.name.match(/^[\d-_]/)) {
+    if (/^[\d-_]/.test(this.name)) {
       return false;
     }
 
-    if (this.name.match(/[\d-_]$/)) {
+    if (/[\d-_]$/.test(this.name)) {
       return false;
     }
 
-    if (this.name.match(/\d{4,}/)) {
+    if (/\d{4,}/.test(this.name)) {
       return false;
     }
 
-    if (this.name.match(/^[a-z\-_0-9]+$/)) {
+    if (/^[a-zA-Z\-_0-9]+$/.test(this.name)) {
       return true;
     }
+
     return false;
   }
 }
